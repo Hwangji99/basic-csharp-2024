@@ -1,4 +1,7 @@
-﻿namespace ex03_loops
+﻿// date : 2024-04-11
+// file : ex03_loops
+
+namespace ex03_loops
 {
     internal class Program
     {
