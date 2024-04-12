@@ -13,7 +13,7 @@ namespace ex06_properties
         private int year; // 보일러 제작년도
         public int Year
         {
-            get { return year; }
+            get { return year; }    
             set { year = value; }
         } // 일반 프로퍼티
 
