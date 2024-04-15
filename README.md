@@ -267,13 +267,35 @@
 - 리플렉션, 애트리뷰트
     - 리플렉션 object.GetType();
     - [obsolete("다음 버전 사용불가!")]
+
 - 파이썬 실행
+    - COM 객체 사용(dynamic 형식)
+    - IronPython 라이브러리 : Python을 C#에서 사용할 수 있도록 해주는 오픈소스 라이브러리
+    - NuGet Package : 파이썬 pip와 같은 라이브러리 관리툴
+    - 해당 프로젝트 > 종속성에서 마우스 우클릭 > NuGet Package 관리
+        1. 파이썬 엔진, 스코프 객체, 설정 경로 객체 생성
+        2. 해당 컴퓨터의 파이썬 경로들을 설정
+        3. 실행시킬 파이썬 파일의 경로를 지정
+        4. 파이썬 실행
+        5. 파이썬 함수를 Func 또는 Action으로 매핑
+        6. 매핑시킨 메서드를 실행
+
+- 가비지 컬렉션(Garbage Collection)
+    - C, C++은 메모리 사용 시 개발자가 직접 메모리를 해제 해야 함
+    - C#, Java, Python 등의 객체지향 언어는 GC(쓰레기 수집기) 기능으로 프로그램이 직접 관리
+    - C# 개발자는 메모리 관리에 아무것도 할 게 없다.
+
 - Winform UI 개발 + 파일, 스레드
-- 가비지 컬렉션
+    - 이벤트, 이벤트 핸들러 (대리자, 이벤트 연결)
+    - 그래픽 사용자 인터페이스를 만드는 방법
+        1. Winforms(Windows Forms)
+        2. WPF(Windows Presentation Foundation)
+    - WYSIWYG(What You See Is What You Get) 방식의 GUI 프로그램 개발
+
 
 ## 4일차(2024-04-16)
-- WPF
 - 예제 프로젝트
+- WPF
 
 ## 5일차(2024-04-17)
 
