@@ -297,19 +297,34 @@
 - 윈폼 UI 개발
     - Windows로 윈폼 개발 학습(UI 디자인 시 더블클릭 절대 금지!!!)
         - Ctrl 누르면서 클릭하면서 옮기면 복사됨
-    - 컨트롤 Prefix
+    - 컨트롤 Prefix(거의 영문자 3단어)
         - ComboBox : Cbo-
         - CheckBox : Chk-
         - RadioButton : Rdo-
         - TextBox : Txt-
         - Button : Btn-
+        - TrackBar : Trb-
+        - ProgressBar : Prg-
+        - TreeView : Trv-
+        - ListView : Lsv-
+        - PictureBox : Pic-
+        - *Dialog : Dlg-
 
+
+
+## 5일차(2024-04-17)
+- 윈폼 UI 개발(이어서)
+    - 스레드 추가
+    - 파일 입출력 추가
+    - 비동기 작업 앱
+    - 윈도우 탐색기 앱
+    - 도서관리 앱 with SQL Server
+    - ModernUI 앱
+    - 국가교통정보센터 CCTV뷰 앱
+    - IoT Dummy 앱 with SQL Server
 
 - 예제 프로젝트
 - WPF
-
-## 5일차(2024-04-17)
-
 
 ## 6일차(2024-04-18)
 
