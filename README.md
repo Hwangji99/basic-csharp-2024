@@ -294,6 +294,17 @@
 
 
 ## 4일차(2024-04-16)
+- 윈폼 UI 개발
+    - Windows로 윈폼 개발 학습(UI 디자인 시 더블클릭 절대 금지!!!)
+        - Ctrl 누르면서 클릭하면서 옮기면 복사됨
+    - 컨트롤 Prefix
+        - ComboBox : Cbo-
+        - CheckBox : Chk-
+        - RadioButton : Rdo-
+        - TextBox : Txt-
+        - Button : Btn-
+
+
 - 예제 프로젝트
 - WPF
 
