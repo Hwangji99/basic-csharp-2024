@@ -106,7 +106,7 @@ namespace ex19_asyncs
             {   
                 using (FileStream toStream = new FileStream(destPath, FileMode.Create))
                 {   
-                    byte[] buffer = new byte[1024]; // 1024(byte) = 1kbyte, 1024 * 1024 = 1Mbyte
+                    byte[] buffer = new byte[1024 * 1024]; // 1024(byte) = 1kbyte, 1024 * 1024 = 1Mbyte
                     int nRead = 0;
                     while ((nRead = await fromStream.ReadAsync(buffer, 0, buffer.Length)) != 0)    // Alt + Enter, Ctrl + space는 그냥 문제 시 눌러라
                     {
