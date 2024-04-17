@@ -326,7 +326,8 @@
     - 파일 입출력 추가
         - 리치 텍스트박스(like MSWord, 한글워드)로 파일저장
 
-        <img src="https://github.com/Hwangji99/basic-csharp-2024/blob/main/images/cs003.png" width="850"
+        <img src="https://github.com/Hwangji99/basic-csharp-2024/blob/main/images/cs003.png" width="850">
+
 
     - 비동기 작업 앱
         - 가장 트렌드가 되는 작업방법
