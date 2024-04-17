@@ -287,6 +287,7 @@
 
 - Winform UI 개발 + 파일, 스레드
     - 이벤트, 이벤트 핸들러 (대리자, 이벤트 연결)
+        - 이벤트 핸들러는 프로그램이 자동으로 만들어 놓은 것
     - 그래픽 사용자 인터페이스를 만드는 방법
         1. Winforms(Windows Forms)
         2. WPF(Windows Presentation Foundation)
@@ -297,6 +298,8 @@
 - 윈폼 UI 개발
     - Windows로 윈폼 개발 학습(UI 디자인 시 더블클릭 절대 금지!!!)
         - Ctrl 누르면서 클릭하면서 옮기면 복사됨
+        - 아이콘 변경 > 파일에서 ALT + Enter > 아이콘 파일붙임 > 디자인 속성 창에서 아이콘 교체
+        - minimize, maximize 는 최대, 최소 창크기 설정
     - 컨트롤 Prefix(거의 영문자 3단어)
         - ComboBox : Cbo-
         - CheckBox : Chk-
@@ -309,22 +312,50 @@
         - ListView : Lsv-
         - PictureBox : Pic-
         - *Dialog : Dlg-
+        - RichTextBox : Rtb-
 
 
 
 ## 5일차(2024-04-17)
 - 윈폼 UI 개발(이어서)
     - 스레드 추가
+        - 프로세스를 나누어서 동시에 여러가지일 진행
+        - 스레드 사용하기 불편함
+        - C# BackgroundWorker 클래스를 추가(Thread를 사용하기 편하게 만든 클래스)
+
     - 파일 입출력 추가
+        - 리치 텍스트박스(like MSWord, 한글워드)로 파일저장
+
+        <img src = "https://github.com/Hwangji99/basic-csharp-2024/blob/main/images/cs003.png" width="850"
+
     - 비동기 작업 앱
+        - 가장 트렌드가 되는 작업방법
+        - 백그라운드 처리는 Thread, BackgroundWorker와 유사
+        - async, await 키워드
+
+        ![비동기앱](https://github.com/Hwangji99/basic-csharp-2024/blob/main/images/cs004.png)
+
+
+## 6일차(2024-04-18)
+- 예제 프로젝트
     - 윈도우 탐색기 앱
     - 도서관리 앱 with SQL Server
     - ModernUI 앱
     - 국가교통정보센터 CCTV뷰 앱
     - IoT Dummy 앱 with SQL Server
 
-- 예제 프로젝트
+
 - WPF
 
-## 6일차(2024-04-18)
 
+## 7일차(2024-04-19)
+
+## 7일차(2024-04-22)
+## 7일차(2024-04-23)
+## 개인 포트폴리오(2024-04-18~24)
+- 심플 메모장앱
+    - 기능...
+    - 특징
+    - 배운점
+
+    - 이미지 삽입(GIF)
