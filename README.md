@@ -349,12 +349,19 @@
         - 리스트뷰에서는 열 편집을 이용해 상단에 출력되는 이름, 유형, 크기 등의 속성을 넣을 수 있다
         - 디버그 > 창 > 출력을 하고 F5를 눌러 어떻게 디버그 되고 있는가를 보면서 진행한다
 
+        ![중간결과](https://github.com/Hwangji99/basic-csharp-2024/blob/main/images/cs005.png)
+
+        - 미적용 -> 컨텍스트메뉴 보기 기능, 더블클릭 프로그램 실행
+
+
+
+## 7일차(2024-04-19)
+- 토이 프로젝트
+    - 윈도우 탐색기 앱 종료
     - ModernUI 앱(UI 디자인)
     - 도서관리 앱 with SQL Server(Base)
     - 국가교통정보센터 CCTV뷰 앱(OpenAI, NuGet dll, Network)
     - IoT Dummy 앱 with SQL Server(IoT, DB)
-
-## 7일차(2024-04-19)
 
 
 ## 8일차(2024-04-22)
