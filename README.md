@@ -360,7 +360,8 @@
     - 윈도우 탐색기 앱 종료
         - 실행결과
 
-        
+https://github.com/Hwangji99/basic-csharp-2024/assets/158007430/954cf432-041d-48ea-a0f9-70aae6d8534d
+
 
 
     - 도서관리 앱 with SQL Server(Base) ModernUI(NuGet패키지)
