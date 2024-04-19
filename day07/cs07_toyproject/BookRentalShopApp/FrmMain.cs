@@ -1,6 +1,8 @@
+using Ax.Fw.MetroFramework.Forms;
+
 namespace BookRentalShopApp
 {
-    public partial class FrmMain : Form
+    public partial class FrmMain : BorderlessForm  // Metro
     {
         public FrmMain()
         {
@@ -9,8 +11,7 @@ namespace BookRentalShopApp
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            int a = 0;
-            MessageBox.Show(a.ToString());
+            
         }
     }
 }

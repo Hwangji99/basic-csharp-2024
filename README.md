@@ -363,7 +363,7 @@
 https://github.com/Hwangji99/basic-csharp-2024/assets/158007430/954cf432-041d-48ea-a0f9-70aae6d8534d
 
 
-
+- 토이 프로젝트2
     - 도서관리 앱 with SQL Server(Base) ModernUI(NuGet패키지)
     ```cs
     // 값형식 변수에 null값을 넣을 수 있도록 만들어준 기능 Nullable. 변수명 뒤에 ?만 추가할 것! C# 밖에 없음
@@ -371,6 +371,8 @@ https://github.com/Hwangji99/basic-csharp-2024/assets/158007430/954cf432-041d-48
     double? b = null;
     float? c = null;
     ```
+    - Menustrip에서 이름 변경시 ex. '파일&F'로 하면 Alt + f 단축키 설정을 해줌
+    - 로그인 패스워드 암호화 미구현
 
 ## 8일차(2024-04-22)
 - 토이 프로젝트
