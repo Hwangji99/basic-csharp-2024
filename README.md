@@ -351,21 +351,26 @@
 
         ![중간결과](https://github.com/Hwangji99/basic-csharp-2024/blob/main/images/cs005.png)
 
-        - 미적용 -> 컨텍스트메뉴 보기 기능, 더블클릭 프로그램 실행
+        - 미적용 -> 컨텍스트메뉴 리스트 뷰 보기 기능, 더블클릭 프로그램 실행
 
 
 
 ## 7일차(2024-04-19)
 - 토이 프로젝트
     - 윈도우 탐색기 앱 종료
-    - ModernUI 앱(UI 디자인)
-    - 도서관리 앱 with SQL Server(Base)
-    - 국가교통정보센터 CCTV뷰 앱(OpenAI, NuGet dll, Network)
-    - IoT Dummy 앱 with SQL Server(IoT, DB)
+        - 실행결과
 
+        
+
+
+    - 도서관리 앱 with SQL Server(Base) ModernUI(NuGet패키지)
 
 ## 8일차(2024-04-22)
+- 토이 프로젝트
+    - 도서관리 앱 종료
+    - IoT Dummy 앱 with SQL Server(IoT, DB)
 
+    - 국가교통정보센터 CCTV뷰 앱(OpenAI, NuGet dll, Network, UI디자인, 비동기메서드)
 
 ## 9일차(2024-04-23)
 
