@@ -376,12 +376,24 @@ https://github.com/Hwangji99/basic-csharp-2024/assets/158007430/954cf432-041d-48
 
 ## 8일차(2024-04-22)
 - 토이 프로젝트
-    - 도서관리 앱 종료
-    - IoT Dummy 앱 with SQL Server(IoT, DB)
-
-    - 국가교통정보센터 CCTV뷰 앱(OpenAI, NuGet dll, Network, UI디자인, 비동기메서드)
+    - 도서관리 앱 관리화면
+        - 앱 사용자 관리 완료
+        - 사용하는 클릭 메뉴 이벤트만 이름을 바꿈(아니면 시간이 오래걸림)
+        - F7 누르면 코드 쪽으로 갔다가 Shift + F7 누르면 디자인으로 돌아오면서 바로 적용됨
+        - UNIQUE 키는 SSMS에서 인덱스/키에 들어가 고유 키로 바꿔줘야함
 
 ## 9일차(2024-04-23)
+- 토이 프로젝트
+    - 도서관리 앱
+        - 책 장르 관리
+        - 책 정보 관리
+        - 도서 회원 관리
+        - 대출 관리
+        - 이 프로그램은...
+
+- Pending
+    - IoT Dummy 앱 with SQL Server(IoT, DB)
+    - 국가교통정보센터 CCTV뷰 앱(OpenAI, NuGet dll, Network, UI디자인, 비동기메서드)
 
 
 ## 개인 토이프로젝트(2024-04-18~24)
