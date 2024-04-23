@@ -10,10 +10,6 @@ namespace NewBookRentalShopApp
     public partial class FrmLogin : MetroForm
     {
         private bool isLogin = false;
-        private string connString = "Data Source = localhost;" +
-                                    "Initial Catalog = BookRentalShop2024;" +
-                                    "Persist Security Info = True;" +
-                                    "User ID = sa; Encrypt = False;Password=mssql_p@ss";
 
         public bool IsLogin
         {   // 로그인 성공여부 저장 변수
@@ -78,7 +74,7 @@ namespace NewBookRentalShopApp
              */
             // 연결문자열(ConnectionString)
             // Data Source = localhost; Initial Catalog = BookRentalShop2024; Persist Security Info = True; User ID = sa; Encrypt = False;Password=mssql_p@ss
-            using (SqlConnection conn = new SqlConnection(connString))
+            using (SqlConnection conn = new SqlConnection(Helper.Common.ConnString))
             {
                 conn.Open();
                 // @userId, @password 는 쿼리문이 아닌 쿼리문 외부에서 변수값을 안전하게 주입을 시켜줌
@@ -90,7 +86,7 @@ namespace NewBookRentalShopApp
                 SqlCommand cmd = new SqlCommand(query, conn);
                 // @userId, @password 파라미터 할당
                 SqlParameter prmUserId = new SqlParameter("@userId", userId); // 파라미터 이름과 변수 이름을 다 동일 시켜야 코딩하기 편함
-                SqlParameter prmPassword = new SqlParameter("Password", GetMd5Hash(md5Hash, password));
+                SqlParameter prmPassword = new SqlParameter("Password", Helper.Common.GetMd5Hash(md5Hash, password));
                 cmd.Parameters.Add(prmUserId);
                 cmd.Parameters.Add(prmPassword);
 
@@ -129,19 +125,6 @@ namespace NewBookRentalShopApp
             }
 
         }
-        // MD5 해시 알고리즘 암호화
-        // ex.1234 --> 01011011 -> 110010101101011 -> x65xAEx11..
-        string GetMd5Hash(MD5 md5Hash, string input)
-        {
-            // 입력문자열을 byte 배열로 변환한 뒤 MD5 해시 처리
-            byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
-            StringBuilder builder = new StringBuilder(); // 문자열을 좀 더 쉽게 쓰게 만들어주는 클래스
-            for (int i = 0; i < data.Length; i++)
-            {
-                builder.Append(data[i].ToString("x2")); // 16진수 문자로 각 글자를 전부 변환
-            }
-
-            return builder.ToString();
-        }
+        
     }
 }
