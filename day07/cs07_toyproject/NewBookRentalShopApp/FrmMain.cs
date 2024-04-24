@@ -17,6 +17,8 @@ namespace NewBookRentalShopApp
         FrmLoginUser frmLoginUser = null; // 객체를 메서드로 생성
         FrmBookDivision frmBookDivision = null;
         FrmBookInfo frmBookInfo = null;
+        FrmMembers frmMembers = null;
+        FrmBookRental frmBookRental = null;
 
         public FrmMain()
         {
@@ -50,6 +52,15 @@ namespace NewBookRentalShopApp
         {
             // 객체변수, 객체변수, 클래스, 클래스(밑에 순서대로)
             frmBookInfo = ShowActiveForm(frmBookInfo, typeof(FrmBookInfo)) as FrmBookInfo;  // FrmBookInfo로 형 변환
+        }
+        private void MnuMembers_Click(object sender, EventArgs e)
+        {
+            frmMembers = ShowActiveForm(frmMembers, typeof(FrmMembers)) as FrmMembers;
+        }
+
+        private void MnuBookRental_Click(object sender, EventArgs e)
+        {
+            frmBookRental = ShowActiveForm(frmBookRental, typeof(FrmBookRental)) as FrmBookRental;
         }
 
         Form ShowActiveForm(Form form, Type type)

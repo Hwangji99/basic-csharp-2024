@@ -58,6 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmBookRental.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBookRental.Designer.cs">
+      <DependentUpon>FrmBookRental.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmBookInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,9 +94,18 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMembers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMembers.Designer.cs">
+      <DependentUpon>FrmMembers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper\Common.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmBookRental.resx">
+      <DependentUpon>FrmBookRental.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmBookInfo.resx">
       <DependentUpon>FrmBookInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -105,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMembers.resx">
+      <DependentUpon>FrmMembers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -132,6 +150,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="books.ico" />
+    <Content Include="imgs\login.png" />
+    <Content Include="imgs\search.png" />
+    <None Include="imgs\search2.png" />
     <None Include="imgs\member.ico" />
     <None Include="imgs\rental.ico" />
     <None Include="imgs\login.ico" />
