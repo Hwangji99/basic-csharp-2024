@@ -72,7 +72,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
             this.splitContainer1.Size = new System.Drawing.Size(758, 370);
-            this.splitContainer1.SplitterDistance = 243;
+            this.splitContainer1.SplitterDistance = 252;
             this.splitContainer1.TabIndex = 0;
             // 
             // DgvResult
@@ -82,7 +82,7 @@
             this.DgvResult.Location = new System.Drawing.Point(0, 0);
             this.DgvResult.Name = "DgvResult";
             this.DgvResult.RowTemplate.Height = 23;
-            this.DgvResult.Size = new System.Drawing.Size(243, 370);
+            this.DgvResult.Size = new System.Drawing.Size(252, 370);
             this.DgvResult.TabIndex = 0;
             this.DgvResult.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvResult_CellClick);
             // 
@@ -115,9 +115,9 @@
             // 
             // NudPrice
             // 
-            this.NudPrice.Location = new System.Drawing.Point(115, 213);
+            this.NudPrice.Location = new System.Drawing.Point(200, 211);
             this.NudPrice.Maximum = new decimal(new int[] {
-            10000000,
+            1000000,
             0,
             0,
             0});
@@ -127,7 +127,7 @@
             // 
             // DtpReleaseDate
             // 
-            this.DtpReleaseDate.Location = new System.Drawing.Point(115, 152);
+            this.DtpReleaseDate.Location = new System.Drawing.Point(200, 147);
             this.DtpReleaseDate.MinimumSize = new System.Drawing.Size(0, 29);
             this.DtpReleaseDate.Name = "DtpReleaseDate";
             this.DtpReleaseDate.Size = new System.Drawing.Size(244, 29);
@@ -137,16 +137,15 @@
             // 
             this.CboDivision.FormattingEnabled = true;
             this.CboDivision.ItemHeight = 23;
-            this.CboDivision.Location = new System.Drawing.Point(115, 89);
+            this.CboDivision.Location = new System.Drawing.Point(200, 84);
             this.CboDivision.Name = "CboDivision";
-            this.CboDivision.PromptText = "-- 구분명 선택 --";
             this.CboDivision.Size = new System.Drawing.Size(244, 29);
             this.CboDivision.TabIndex = 9;
             this.CboDivision.UseSelectable = true;
             // 
             // BtnDel
             // 
-            this.BtnDel.Location = new System.Drawing.Point(287, 255);
+            this.BtnDel.Location = new System.Drawing.Point(372, 250);
             this.BtnDel.Name = "BtnDel";
             this.BtnDel.Size = new System.Drawing.Size(70, 35);
             this.BtnDel.TabIndex = 16;
@@ -156,7 +155,7 @@
             // 
             // BtnSave
             // 
-            this.BtnSave.Location = new System.Drawing.Point(211, 255);
+            this.BtnSave.Location = new System.Drawing.Point(296, 250);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(70, 35);
             this.BtnSave.TabIndex = 15;
@@ -166,7 +165,7 @@
             // 
             // BtnNew
             // 
-            this.BtnNew.Location = new System.Drawing.Point(135, 255);
+            this.BtnNew.Location = new System.Drawing.Point(220, 250);
             this.BtnNew.Name = "BtnNew";
             this.BtnNew.Size = new System.Drawing.Size(70, 35);
             this.BtnNew.TabIndex = 14;
@@ -189,7 +188,7 @@
             this.TxtIsbn.CustomButton.UseSelectable = true;
             this.TxtIsbn.CustomButton.Visible = false;
             this.TxtIsbn.Lines = new string[0];
-            this.TxtIsbn.Location = new System.Drawing.Point(115, 187);
+            this.TxtIsbn.Location = new System.Drawing.Point(200, 182);
             this.TxtIsbn.MaxLength = 13;
             this.TxtIsbn.Name = "TxtIsbn";
             this.TxtIsbn.PasswordChar = '\0';
@@ -222,7 +221,7 @@
             this.TxtNames.CustomButton.UseSelectable = true;
             this.TxtNames.CustomButton.Visible = false;
             this.TxtNames.Lines = new string[0];
-            this.TxtNames.Location = new System.Drawing.Point(115, 124);
+            this.TxtNames.Location = new System.Drawing.Point(200, 119);
             this.TxtNames.MaxLength = 32767;
             this.TxtNames.Name = "TxtNames";
             this.TxtNames.PasswordChar = '\0';
@@ -242,7 +241,7 @@
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(31, 216);
+            this.metroLabel7.Location = new System.Drawing.Point(116, 211);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(55, 19);
             this.metroLabel7.TabIndex = 6;
@@ -252,7 +251,7 @@
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(49, 187);
+            this.metroLabel6.Location = new System.Drawing.Point(134, 182);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(37, 19);
             this.metroLabel6.TabIndex = 5;
@@ -274,7 +273,7 @@
             this.TxtAuthor.CustomButton.UseSelectable = true;
             this.TxtAuthor.CustomButton.Visible = false;
             this.TxtAuthor.Lines = new string[0];
-            this.TxtAuthor.Location = new System.Drawing.Point(115, 60);
+            this.TxtAuthor.Location = new System.Drawing.Point(200, 55);
             this.TxtAuthor.MaxLength = 32767;
             this.TxtAuthor.Name = "TxtAuthor";
             this.TxtAuthor.PasswordChar = '\0';
@@ -294,7 +293,7 @@
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(31, 124);
+            this.metroLabel4.Location = new System.Drawing.Point(116, 119);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(55, 19);
             this.metroLabel4.TabIndex = 3;
@@ -304,7 +303,7 @@
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(35, 152);
+            this.metroLabel5.Location = new System.Drawing.Point(120, 147);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(51, 19);
             this.metroLabel5.TabIndex = 4;
@@ -326,7 +325,7 @@
             this.TxtBookIdx.CustomButton.UseSelectable = true;
             this.TxtBookIdx.CustomButton.Visible = false;
             this.TxtBookIdx.Lines = new string[0];
-            this.TxtBookIdx.Location = new System.Drawing.Point(115, 31);
+            this.TxtBookIdx.Location = new System.Drawing.Point(200, 26);
             this.TxtBookIdx.MaxLength = 32767;
             this.TxtBookIdx.Name = "TxtBookIdx";
             this.TxtBookIdx.PasswordChar = '\0';
@@ -345,7 +344,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(35, 89);
+            this.metroLabel1.Location = new System.Drawing.Point(120, 84);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(51, 19);
             this.metroLabel1.TabIndex = 2;
@@ -355,7 +354,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(35, 60);
+            this.metroLabel3.Location = new System.Drawing.Point(120, 55);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(51, 19);
             this.metroLabel3.TabIndex = 1;
@@ -365,7 +364,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(31, 31);
+            this.metroLabel2.Location = new System.Drawing.Point(116, 26);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(55, 19);
             this.metroLabel2.TabIndex = 0;

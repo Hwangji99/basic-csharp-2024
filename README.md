@@ -399,6 +399,11 @@ https://github.com/Hwangji99/basic-csharp-2024/assets/158007430/954cf432-041d-48
         - 도서 회원 관리
         - 대출 관리
         - 이 프로그램은...
+        
+        ![책대여프로그램](https://github.com/Hwangji99/basic-csharp-2024/blob/main/images/cs006.png)
+
+
+## 나머지(WPF/미니프로젝트 시간에 다시)
 - Pending
     - IoT Dummy 앱 with SQL Server(IoT, DB)
     - 국가교통정보센터 CCTV뷰 앱(OpenAI, NuGet dll, Network, UI디자인, 비동기메서드)
