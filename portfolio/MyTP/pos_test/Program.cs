@@ -1,4 +1,4 @@
-namespace ToyProJect
+namespace pos_test
 {
     internal static class Program
     {
