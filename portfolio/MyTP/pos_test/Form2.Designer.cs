@@ -184,8 +184,10 @@
             // 
             // TxtId
             // 
+            TxtId.Enabled = false;
             TxtId.Location = new Point(110, 60);
             TxtId.Name = "TxtId";
+            TxtId.ReadOnly = true;
             TxtId.Size = new Size(272, 33);
             TxtId.TabIndex = 1;
             // 

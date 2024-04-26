@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace pos_test
 {
@@ -42,6 +43,9 @@ namespace pos_test
 
             // 폼에 리스트 뷰 컨트롤 추가
             this.Controls.Add(listViewCart);
+
+            // "물품번호" 열의 데이터 타입을 숫자로 지정
+            dataGridView1.Columns["Id"].ValueType = typeof(int);
         }
 
         private void addDataGridRowFromFile()
@@ -176,42 +180,31 @@ namespace pos_test
 
         private void BtnCartAdd_Click_1(object sender, EventArgs e)
         {
-            // 선택된 행이 있는지 확인
-            if (dataGridView1.SelectedRows.Count > 0)
+            string id = TxtId.Text;
+            string count = TxtCount.Text;
+            string name = TxtName.Text;
+            string buy_count = TxtBuyCount.Text;
+
+            if (int.Parse(buy_count) < 0)
+                return;
+            if (selectedGridItemRowNum == -1)
+                return;
+            if (int.Parse(count) >= int.Parse(buy_count))
             {
-                // 선택된 행의 인덱스 가져오기
-                int selectedIndex = dataGridView1.SelectedRows[0].Index;
-
-                // 선택된 행의 데이터 가져오기
-                DataGridViewRow selectedRow = dataGridView1.Rows[selectedIndex];
-                string productId = selectedRow.Cells["Id"].Value.ToString();
-                string productName = selectedRow.Cells["colName"].Value.ToString();
-                int productPrice = int.Parse(selectedRow.Cells["colPrice"].Value.ToString());
-
-                // 입력된 수량이 숫자인지 확인
-                int selectedQuantity;
-                if (!int.TryParse(TxtBuyCount.Text, out selectedQuantity))
+                if (cartDict.ContainsKey(id))
                 {
-                    MessageBox.Show("수량을 숫자로 입력하세요.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
+                    MessageBox.Show("이미 상품을 담았습니다.");
                 }
-
-                // 재고량 확인
-                int stockQuantity = int.Parse(selectedRow.Cells["colCount"].Value.ToString());
-                if (selectedQuantity > stockQuantity)
+                else
                 {
-                    MessageBox.Show("재고가 부족합니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
+                    Cart newCart = new Cart(id, name, buy_count);
+                    cartDict.Add(id, newCart);
+                    cartList.Add(newCart);
                 }
-
-                // 장바구니에 아이템 추가
-                string[] item = { productId, productName, productPrice.ToString(), selectedQuantity.ToString() };
-                ListViewItem cartItem = new ListViewItem(item);
-                listViewCart.Items.Add(cartItem);
             }
             else
             {
-                MessageBox.Show("먼저 상품을 선택하세요.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("재고가 부족합니다.");
             }
         }
 
@@ -239,33 +232,11 @@ namespace pos_test
             MessageBox.Show("결제가 완료되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void dataGridView1_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
-        {
-            if (e.Column.Name == "id") // 물품번호 컬럼인 경우
-            {
-                int num1, num2;
-                bool isNum1 = int.TryParse(e.CellValue1.ToString(), out num1);
-                bool isNum2 = int.TryParse(e.CellValue2.ToString(), out num2);
 
-                if (isNum1 && isNum2)
-                {
-                    e.SortResult = num1.CompareTo(num2);
-                    e.Handled = true;
-                }
-                else
-                {
-                    // 숫자로 변환할 수 없는 경우, 문자열로 정렬
-                    e.SortResult = string.Compare(e.CellValue1.ToString(), e.CellValue2.ToString());
-                    e.Handled = true;
-                }
-            }
-        }
+
 
         private void BtnNumAsc_Click(object sender, EventArgs e)
         {
-            // "물품번호" 열을 숫자로 인식하도록 설정 
-            dataGridView1.Columns["Id"].ValueType = typeof(int);
-
             // 현재 정렬 방식 확인
             if (dataGridView1.SortOrder == SortOrder.Ascending)
             {
@@ -317,6 +288,15 @@ namespace pos_test
         private void BtnClear_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView1_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
+        {
+            int a = int.Parse(e.CellValue1.ToString()), b = int.Parse(e.CellValue2.ToString());
+
+            e.SortResult = a.CompareTo(b);
+
+            e.Handled = true;
         }
     }
 }

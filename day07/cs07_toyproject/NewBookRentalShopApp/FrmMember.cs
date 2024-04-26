@@ -95,13 +95,11 @@ namespace NewBookRentalShopApp
                     }
                     else // UPDATE
                     {
-                        query = @"UPDATE [dbo].[membertbl]
-                                       SET [Names] = @Names
-                                          ,[Levels] = @Levels
-                                          ,[Addr] = @Addr
-                                          ,[Mobile] = @Mobile
-                                          ,[Email] = @Email
-                                     WHERE memberIdx = @memberIdx";
+                        query = @"UPDATE [dbo].[Product]
+                                     SET [colName] = @colName
+                                        ,[colPrice] = @colPrice
+                                        ,[colCount] = @colCount
+                                   WHERE Id = @Id";
                     }
 
                     SqlCommand cmd = new SqlCommand(query, conn);
