@@ -32,8 +32,8 @@
             splitContainer1 = new SplitContainer();
             tableLayoutPanel1 = new TableLayoutPanel();
             GrbDataInput = new GroupBox();
+            BtnSave = new Button();
             BtnDel = new Button();
-            BtnUpdate = new Button();
             BtnAdd = new Button();
             TxtCount = new TextBox();
             TxtPrice = new TextBox();
@@ -112,8 +112,8 @@
             // 
             // GrbDataInput
             // 
+            GrbDataInput.Controls.Add(BtnSave);
             GrbDataInput.Controls.Add(BtnDel);
-            GrbDataInput.Controls.Add(BtnUpdate);
             GrbDataInput.Controls.Add(BtnAdd);
             GrbDataInput.Controls.Add(TxtCount);
             GrbDataInput.Controls.Add(TxtPrice);
@@ -131,9 +131,19 @@
             GrbDataInput.TabStop = false;
             GrbDataInput.Text = "데이터 입력";
             // 
+            // BtnSave
+            // 
+            BtnSave.Location = new Point(132, 321);
+            BtnSave.Name = "BtnSave";
+            BtnSave.Size = new Size(88, 67);
+            BtnSave.TabIndex = 8;
+            BtnSave.Text = "저장";
+            BtnSave.UseVisualStyleBackColor = true;
+            BtnSave.Click += BtnSave_Click;
+            // 
             // BtnDel
             // 
-            BtnDel.Location = new Point(257, 321);
+            BtnDel.Location = new Point(266, 321);
             BtnDel.Name = "BtnDel";
             BtnDel.Size = new Size(88, 67);
             BtnDel.TabIndex = 7;
@@ -141,19 +151,9 @@
             BtnDel.UseVisualStyleBackColor = true;
             BtnDel.Click += BtnDel_Click;
             // 
-            // BtnUpdate
-            // 
-            BtnUpdate.Location = new Point(136, 321);
-            BtnUpdate.Name = "BtnUpdate";
-            BtnUpdate.Size = new Size(88, 67);
-            BtnUpdate.TabIndex = 6;
-            BtnUpdate.Text = "수정";
-            BtnUpdate.UseVisualStyleBackColor = true;
-            BtnUpdate.Click += BtnUpdate_Click;
-            // 
             // BtnAdd
             // 
-            BtnAdd.Location = new Point(15, 321);
+            BtnAdd.Location = new Point(6, 321);
             BtnAdd.Name = "BtnAdd";
             BtnAdd.Size = new Size(88, 67);
             BtnAdd.TabIndex = 5;
@@ -257,7 +257,7 @@
             BtnCartAdd.TabIndex = 9;
             BtnCartAdd.Text = "담기";
             BtnCartAdd.UseVisualStyleBackColor = true;
-            BtnCartAdd.Click += BtnCartAdd_Click_1;
+            BtnCartAdd.Click += BtnCartAdd_Click;
             // 
             // TxtBuyCount
             // 
@@ -451,7 +451,6 @@
         private Label LbName;
         private Label LbId;
         private Button BtnDel;
-        private Button BtnUpdate;
         private Button BtnAdd;
         private TextBox TxtCount;
         private TextBox TxtPrice;
@@ -463,5 +462,6 @@
         private Button BtnBuy;
         private TextBox TxtBuyCount;
         private ListBox Cart;
+        private Button BtnSave;
     }
 }
