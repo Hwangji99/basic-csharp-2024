@@ -49,6 +49,7 @@
             TxtBuyCount = new TextBox();
             GrbCart = new GroupBox();
             Cart = new ListBox();
+            Btnrm = new Button();
             BtnClear = new Button();
             BtnBuy = new Button();
             splitContainer2 = new SplitContainer();
@@ -57,8 +58,6 @@
             BtnNumAsc = new Button();
             BtnCountDesc = new Button();
             BtnPriceDesc = new Button();
-            LbEmpty = new Label();
-            BtnFilter = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -184,10 +183,8 @@
             // 
             // TxtId
             // 
-            TxtId.Enabled = false;
             TxtId.Location = new Point(110, 60);
             TxtId.Name = "TxtId";
-            TxtId.ReadOnly = true;
             TxtId.Size = new Size(272, 33);
             TxtId.TabIndex = 1;
             // 
@@ -269,6 +266,7 @@
             // GrbCart
             // 
             GrbCart.Controls.Add(Cart);
+            GrbCart.Controls.Add(Btnrm);
             GrbCart.Controls.Add(BtnClear);
             GrbCart.Controls.Add(BtnBuy);
             GrbCart.Font = new Font("맑은 고딕", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 129);
@@ -289,9 +287,19 @@
             Cart.Size = new Size(320, 279);
             Cart.TabIndex = 1;
             // 
+            // Btnrm
+            // 
+            Btnrm.Location = new Point(105, 335);
+            Btnrm.Name = "Btnrm";
+            Btnrm.Size = new Size(93, 39);
+            Btnrm.TabIndex = 11;
+            Btnrm.Text = "빼기";
+            Btnrm.UseVisualStyleBackColor = true;
+            Btnrm.Click += Btnrm_Click;
+            // 
             // BtnClear
             // 
-            BtnClear.Location = new Point(116, 335);
+            BtnClear.Location = new Point(204, 335);
             BtnClear.Name = "BtnClear";
             BtnClear.Size = new Size(93, 39);
             BtnClear.TabIndex = 11;
@@ -345,8 +353,6 @@
             flowLayoutPanel1.Controls.Add(BtnNumAsc);
             flowLayoutPanel1.Controls.Add(BtnCountDesc);
             flowLayoutPanel1.Controls.Add(BtnPriceDesc);
-            flowLayoutPanel1.Controls.Add(LbEmpty);
-            flowLayoutPanel1.Controls.Add(BtnFilter);
             flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.Location = new Point(0, 0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -382,23 +388,6 @@
             BtnPriceDesc.Text = "가격 내림차순";
             BtnPriceDesc.UseVisualStyleBackColor = true;
             BtnPriceDesc.Click += BtnPriceDesc_Click;
-            // 
-            // LbEmpty
-            // 
-            LbEmpty.Location = new Point(3, 138);
-            LbEmpty.Name = "LbEmpty";
-            LbEmpty.Size = new Size(273, 40);
-            LbEmpty.TabIndex = 2;
-            LbEmpty.Text = "label1";
-            // 
-            // BtnFilter
-            // 
-            BtnFilter.Location = new Point(3, 181);
-            BtnFilter.Name = "BtnFilter";
-            BtnFilter.Size = new Size(273, 40);
-            BtnFilter.TabIndex = 3;
-            BtnFilter.Text = "필터";
-            BtnFilter.UseVisualStyleBackColor = true;
             // 
             // pos
             // 
@@ -440,8 +429,6 @@
         private Button BtnNumAsc;
         private Button BtnPriceDesc;
         private Button BtnCountDesc;
-        private Label LbEmpty;
-        private Button BtnFilter;
         private TableLayoutPanel tableLayoutPanel1;
         private GroupBox GrbDataInput;
         private GroupBox GrbCartAdd;
@@ -463,5 +450,6 @@
         private TextBox TxtBuyCount;
         private ListBox Cart;
         private Button BtnSave;
+        private Button Btnrm;
     }
 }
