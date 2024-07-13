@@ -15,6 +15,8 @@ namespace pos_test
 {
     public partial class pos : Form
     {
+
+
         private bool isNew = false; // UPDATE(false), INSERT(true)
 
         private string ConnString = "Data Source = localhost;" +
@@ -42,27 +44,18 @@ namespace pos_test
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            //// 리스트 뷰 컨트롤에 필요한 속성 설정
-            //listViewCart.Size = new Size(300, 200);
-            //listViewCart.Location = new Point(20, 20);
-            //listViewCart.View = View.Details;
-            //listViewCart.Columns.Add("Product ID", 100);
-            //listViewCart.Columns.Add("Product Name", 100);
-            //listViewCart.Columns.Add("Price", 100);
-            //listViewCart.Columns.Add("Quantity", 100);
-
-            // 폼에 리스트 뷰 컨트롤 추가
-            //this.Controls.Add(listViewCart);
-
-            // "물품번호" 열의 데이터 타입을 숫자로 지정
-            //dataGridView1.Columns["Id"].ValueType = typeof(int);
-
             RefreshData();
             // BtnCartAdd 이벤트 핸들러를 연결합니다.
             BtnCartAdd.Click += BtnCartAdd_Click;
+
+            // 초기 상태에서 장바구니가 비었으면 결제 버튼 비활성화
+            UpdatePaymentButtonState();
         }
 
-
+        private void UpdatePaymentButtonState()
+        {
+            BtnBuy.Enabled = !IsCartEmpty();
+        }
 
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -170,6 +163,7 @@ namespace pos_test
                     MessageBox.Show(this, "삭제실패!", "삭제", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            RefreshData();
         }
 
         private void BtnCartAdd_Click(object sender, EventArgs e)
@@ -216,6 +210,8 @@ namespace pos_test
 
             // 성공적으로 추가되었다는 메시지를 표시합니다.
             MessageBox.Show("제품이 장바구니에 추가되었습니다.", "추가 완료", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            UpdatePaymentButtonState();
         }
 
         private void BtnBuy_Click(object sender, EventArgs e)
@@ -322,9 +318,6 @@ namespace pos_test
             }
         }
 
-        //private bool isCountDescending = true; // 재고별 내림차순 정렬 여부를 나타내는 변수
-        //private bool isPriceDescending = true; // 가격별 내림차순 정렬 여부를 나타내는 변수
-
         private void BtnCountDesc_Click(object sender, EventArgs e)
         {
             try
@@ -391,19 +384,61 @@ namespace pos_test
             }
         }
 
+        private bool IsCartEmpty()
+        {
+            return cartItems.Count == 0;
+        }
 
         private void BtnClear_Click(object sender, EventArgs e)
         {
             Cart.Items.Clear();
+            cartItems.Clear();
+            UpdatePaymentButtonState();
         }
-
-        private void dataGridView1_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
+        private void Btnrm_Click(object sender, EventArgs e)
         {
-            //int a = int.Parse(e.CellValue1.ToString()), b = int.Parse(e.CellValue2.ToString());
+            // 리스트 박스에서 선택된 아이템이 있는지 확인
+            if (Cart.SelectedItem != null)
+            {
+                // 선택된 아이템을 문자열로 가져옴
+                string selectedItem = Cart.SelectedItem.ToString();
 
-            //e.SortResult = a.CompareTo(b);
-            //e.Handled = true;
+                // 확인 대화상자를 통해 사용자에게 빼시겠습니까? 물어봅니다.
+                DialogResult result = MessageBox.Show($"'{selectedItem}'을(를) 장바구니에서 제거하시겠습니까?",
+                                                      "아이템 제거", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    // 리스트 박스에서 해당 아이템 제거
+                    Cart.Items.Remove(selectedItem);
+
+                    // 그리드 뷰에서도 해당 아이템을 찾아 제거
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
+                    {
+                        // DataGridView의 특정 열에서 아이템이 있는지 확인하고 제거
+                        if (row.Cells[1].Value != null && row.Cells[1].Value.ToString() == selectedItem)
+                        {
+                            dataGridView1.Rows.Remove(row);
+                            break; // 한 번만 제거하므로 반복문 탈출
+                        }
+                    }
+
+                    // 장바구니 리스트를 초기화합니다.
+                    cartItems.Clear();
+
+                    // 결제 버튼 상태를 업데이트합니다.
+                    UpdatePaymentButtonState();
+
+                    MessageBox.Show($"'{selectedItem}'이(가) 장바구니에서 제거되었습니다.",
+                                    "제거 완료", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("빼고자 하는 아이템을 선택하세요.", "선택 오류", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
+
 
         private void RefreshData()
         {
@@ -542,32 +577,5 @@ namespace pos_test
             }
         }
 
-        private void Btnrm_Click(object sender, EventArgs e)
-        {
-            // 리스트 박스에서 선택된 아이템이 있는지 확인
-            if (Cart.SelectedItem != null)
-            {
-                // 선택된 아이템을 문자열로 가져옴
-                string selectedItem = Cart.SelectedItem.ToString();
-
-                // 리스트 박스에서 해당 아이템 제거
-                Cart.Items.Remove(selectedItem);
-
-                // 그리드 뷰에서도 해당 아이템을 찾아 제거
-                foreach (DataGridViewRow row in dataGridView1.Rows)
-                {
-                    // DataGridView의 특정 열에서 아이템이 있는지 확인하고 제거
-                    if (row.Cells[1].Value != null && row.Cells[1].Value.ToString() == selectedItem)
-                    {
-                        dataGridView1.Rows.Remove(row);
-                        break; // 한 번만 제거하므로 반복문 탈출
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("빼고자 하는 아이템을 선택하세요.", "선택 오류", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
     }
 }

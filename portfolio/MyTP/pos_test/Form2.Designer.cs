@@ -346,7 +346,6 @@
             dataGridView1.Size = new Size(900, 357);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellClick += dataGridView1_CellClick;
-            dataGridView1.SortCompare += dataGridView1_SortCompare;
             // 
             // flowLayoutPanel1
             // 
