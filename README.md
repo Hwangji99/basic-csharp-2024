@@ -422,4 +422,8 @@ https://github.com/Hwangji99/basic-csharp-2024/assets/158007430/954cf432-041d-48
 
     - 실행 영상
 
+
+https://github.com/user-attachments/assets/6f6bb90d-c16c-4ece-bf43-5ed46e0bd067
+
+
         
